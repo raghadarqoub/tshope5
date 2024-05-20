@@ -1,7 +1,6 @@
 import categoryModel from '../../../DB/model/category.model.js'
-// import cloudinary from '../../utls/cloudinary.js';
+import cloudinary from '../../utls/cloudinary.js';
 import slugify from 'slugify';
-import cloudinary from 'cloudinary';
 export const create =async (req, res) => {
     req.body.name =req.body.name.toLowerCase();
     if(await categoryModel.findOne({ name:req.body.name})){
